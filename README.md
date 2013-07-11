@@ -13,6 +13,5 @@ Will create test.txt on user folder with every sound link in the user's favorite
 
 
 TO DO:
-remove "permalink_url": OR use a json parser
-automate it a bit more
+automate it a bit more?
 wakaranai
