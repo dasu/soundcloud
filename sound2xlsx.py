@@ -12,7 +12,7 @@ bytes = urllib.urlopen(uri)
 test = bytes.read()
 m = json.loads(test)
 for name in m:
-  user = name['permalink']
+  	user = name['permalink']
 	fav = name['public_favorites_count']
 #	users.append(user)
 #	favn.append(fav)
@@ -27,13 +27,13 @@ for name in m:
 wb2 = load_workbook('test.xlsx')
 sheet1 = wb2.get_sheet_by_name(name= 'Sheet1')
 x = sheet1.get_highest_column()
-print 'x = ' + str(x)
-print 'y = ' + str(y)
+#print 'x = ' + str(x)
+#print 'y = ' + str(y)
 for row in sheet1.range('A3:A25'):
 	for p in row:
 		cv = sheet1.cell(row = y, column = x)
 		cv.value = tel[p.value]
-		print cv.value
+#		print cv.value
 		y += 1		
 #		print y
 #		list.append(p.value)
@@ -57,5 +57,5 @@ for row in sheet1.range('A3:A25'):
 #	print sheet1.cell('A3').value
 
 #print tel['posse-1']
-print sheet1.get_highest_column()
+#print sheet1.get_highest_column()
 wb2.save('test.xlsx')
