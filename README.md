@@ -21,6 +21,6 @@ Crawls and outputs the url of your follower's favorites in a text file.  (which 
 
 
 TO DO:  
-filter by favorited day (probably not possible ;_;) 
-automate it a bit more? 
+filter by favorited day (probably not possible ;_;)  
+automate it a bit more?  
 wakaranai
