@@ -8,6 +8,7 @@ client = soundcloud.Client(
 	username='',
 	password='')
 
+text = open("test.txt", "w")
 followers = client.get('/me/followings')
 
 for users in followers:
@@ -19,5 +20,5 @@ for users in followers:
 			o = o+200
 			for x in favs:
 				print x.permalink_url
-				
+				text.write(x.permalink_url + '\n')
 				#client.get ('/users/user/favorites', created_at = { 'from':'2012-08-29 12:13:23'}) (used to file songs by date)
