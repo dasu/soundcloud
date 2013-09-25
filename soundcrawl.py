@@ -1,4 +1,7 @@
-#I don't know what i'm doing.
+#soundcrawl.py
+#crawl and output your friend's favorite songs. + your recent dashboard songs
+#Idon't know what i'm doing.
+#v084
 import soundcloud
 
 
@@ -10,6 +13,7 @@ client = soundcloud.Client(
 
 text = open("test.txt", "w")
 followers = client.get('/me/followings')
+dashboard = client.get('/me/activities/tracks').collection
 
 for users in followers:
 	user = users
@@ -21,4 +25,7 @@ for users in followers:
 		for x in favs:
 			print x.permalink_url
 			text.write(x.permalink_url + '\n')
-			#client.get ('/users/user/favorites', created_at = { 'from':'2012-08-29 12:13:23'}) (used to file songs by date)
+			
+for track in dashboard:
+        text.write(track['origin']['permalink_url'] + '\n')
+        print track['origin']['permalink_url']
