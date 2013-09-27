@@ -1,4 +1,4 @@
-# expsound.py v0.13 proof of concept
+# expsound.py v0.15 proof of concept
 # Using the experimental soundcloud API, finally gather only links that were favorited after x date
 # to do: speed it up, write to file, idk
 
@@ -24,8 +24,8 @@ followers = client.get('/me/followings')
 
 for users in followers:
         o = 0
-        uri = "https://api.soundcloud.com/e1/users/%s/likes.json?client_id=YOUR_CLIENT_ID&limit=200&offset=%s"%(users.id,o)
-        m = sound(uri)
+        #uri = "https://api.soundcloud.com/e1/users/%s/likes.json?client_id=YOUR_CLIENT_ID&limit=200&offset=%s"%(users.id,o)
+        m = 'True'
         while m:
                 uri = "https://api.soundcloud.com/e1/users/%s/likes.json?client_id=YOUR_CLIENT_ID&limit=200&offset=%s"%(users.id,o)
                 m = sound(uri)
