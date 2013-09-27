@@ -25,7 +25,7 @@ followers = client.get('/me/followings')
 for users in followers:
         o = 0
         #uri = "https://api.soundcloud.com/e1/users/%s/likes.json?client_id=YOUR_CLIENT_ID&limit=200&offset=%s"%(users.id,o)
-        m = 'True'
+        m = True
         while m:
                 uri = "https://api.soundcloud.com/e1/users/%s/likes.json?client_id=YOUR_CLIENT_ID&limit=200&offset=%s"%(users.id,o)
                 m = sound(uri)
