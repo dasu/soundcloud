@@ -19,9 +19,13 @@ soundcrawl.py
 Requires: soundcloud python wrapper  
 Crawls and outputs the url of your follower's favorites in a text file.  (which can then be pasted into jdownloader and mass downloaded)
 
+soundcloud.sh  
+example: bash soundcloud.sh  
+Bash script to start soundcrawl.py and if you have a previous output from soundcrawl.py, capture the unique difference of the two and output it, and archive the old output.  
+
 expsound.py  
-Requires: soundcloud python wrapper
-Outputs sound url of follower's favorites newer than a specified favorited date.  Uses soundcloud's experimental API.  PoC
+Requires: soundcloud python wrapper  
+Outputs sound url of follower's favorites newer than a specified favorited date.  Uses soundcloud's experimental API.  PoC  
 
 TO DO:  
 filter by favorited day ~~(probably not possible ;_;)~~ doable with experimental api  
