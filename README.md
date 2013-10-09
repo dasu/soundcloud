@@ -1,7 +1,7 @@
 soundcloud
 ==========
 
-Simple shell scripts to scrape soundloud links to be used for whatever program you want (such as j-downloader)
+Simple shell and python scripts to scrape soundloud links of the favorites from the users you follow, to be used for whatever program you want (such as j-downloader)
 
 sc.sh usage: bash sc.sh name_of_user  
 example: bash sc.sh user  
