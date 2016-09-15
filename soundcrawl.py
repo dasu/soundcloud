@@ -40,5 +40,6 @@ for users in followers:
 			print x.permalink_url
 
 for track in dashboard:
-	text.write(track.origin.permalink_url + '\n')
-	print track.origin.permalink_url
+	if track.origin.obj:
+		text.write(track.origin.permalink_url + '\n')
+		print track.origin.permalink_url
