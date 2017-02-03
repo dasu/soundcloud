@@ -22,4 +22,6 @@ python ./exp2sound.py $date2
 
 cat ./api2.txt ./diff.txt > ./combined.txt
 
+sed -i 's/https:\/\//http:\/\//g' combined.txt
+
 sort -u ./combined.txt -o ./combined.txt
