@@ -25,15 +25,20 @@ def get_songs(likes,setdate):
                 print str(song_liked), songs['playlist']['permalink_url']
                 text.write(songs['playlist']['permalink_url'] + '\n')
         else:
+            print("returning false...")
             return False
+    return True
 
 text = open("api2.txt", "w")
 followers = client.get('/me/followings').collection
 dashboard = client.get('/me/activities/tracks',limit=200)
+cutoff = ((datetime.strptime(sys.argv[1],"%Y-%m-%d")) - timedelta(days=1)).date()
 while dashboard:
     for tracks in dashboard.collection:
         if tracks.origin.obj:
-            text.write(tracks.origin.permalink_url + '\n')
+            created_at = datetime.strptime(tracks.origin.obj['created_at'][:19],"%Y/%m/%d %H:%M:%S").date()
+            if cutoff <= created_at:
+                text.write(tracks.origin.permalink_url + '\n')
     try:
         dashboard = client.get(dashboard.next_href,limit=200)
     except:
@@ -51,3 +56,5 @@ for users in followers:
             break
         if likes['next_href'] is None:
             break
+
+print("Reached end of script")
