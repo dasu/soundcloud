@@ -1,12 +1,15 @@
 #!/bin/bash
 #compares both output of old and new reports from soundcrawl and outputs the differences between the two.
 # useful for just grabbing whatever has changed.
-#v.35
+#v.40
 
+set -e
 date1=$(date +%F)
 date2=$(date -r diff.txt +%F)
 
 python ./soundcrawl.py
+if [ $? -ne 0 ]; then
+    exit 1
 
 echo "Sorting now"
 
