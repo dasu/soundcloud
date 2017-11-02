@@ -10,6 +10,7 @@ date2=$(date -r diff.txt +%F)
 python ./soundcrawl.py
 if [ $? -ne 0 ]; then
     exit 1
+fi
 
 echo "Sorting now"
 
